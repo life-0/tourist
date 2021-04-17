@@ -1,0 +1,92 @@
+*{
+    margin:0 auto;
+    padding:0px;
+}
+
+/*伪类样式：悬停 当我鼠标悬停在.top_nav a时触发以下样式*/
+.top_nav a:hover{
+    color:#00c;
+}
+.jiacu{
+    /*字体加粗*/
+    font-weight:bold;
+}
+.more_product{
+    /*<a>标签是行级标签，行级标签是不能直接使用样式设置宽高的，要想给他设置宽高，
+    得把行级标签变成块级标签display: block;让行级标签变成块级标签*/
+    display:block;
+    width:60px;
+    height:24px;
+    background-color:#38f;
+    /*取消下划线*/
+    text-decoration:none;
+    /*最高优先级*/
+    color:white!important;
+    float:left;
+}
+.search_button{
+    width:100px;
+    height:37px;
+    font-size:15px;
+    background-color:#3385ff;
+    color:white;
+    font-family:"Microsoft YaHei";
+    border:0px;/*缩小文本框和按钮框的距离*/
+    float:left;
+}
+.search_button:hover{
+    background-color:#2d78f4;
+}
+.bottom{
+    width:640px;
+    height:200px;
+    margin-top:150px;
+}
+.ewm{
+    width:60px;
+    height:60px;
+}
+.phone_bd{
+    text-align:center;
+    width:60px;
+    height:23px;
+    color:#666;
+    font-size:12px;
+    font-weight:bold;/*加粗*/
+}
+.lj_bd{
+    width:100%;
+    height:46px;
+
+}
+.lj_bd p{
+    width:640px;
+    text-align: center;
+    font-size: 12px;
+    color:#999;
+    margin-top:10px;
+}
+.lj_bd p a{
+    padding:0px 10px;
+    font-size: 12px;
+    color:#999;
+}
+.bottom_bottom{
+    width:640px;
+    height:17px;
+}
+.bottom_bottom a{
+    display:block;
+    float:left;
+}
+.icon{
+    display:block;
+    width:14px;
+    height:17px;
+    background-image:url("../image/icon.png");
+    float:left;
+    background-position:-600px -96px;/*背景位移*/
+}
+.icon_1{
+    background-position:-623px -96px;
+}

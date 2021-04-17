@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <meta charset="utf-8">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>文章</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="js/JQuery-3.4.1.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        ul ul{display: none}
+        .nav{
+            width: 180px;
+            height: 180px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<ul class="nav">
+    <li>
+        <span>一级菜单</span>
+        <ul>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+    <li>
+        <span>一级菜单</span>
+        <ul>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+    <li>
+        <span>一级菜单</span>
+        <ul>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+    <li>
+        <span>一级菜单</span>
+        <ul>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+</ul>
+</body>
+
+<script>
+    $(".nav").children("li").mouseover(function(){
+        $(this).children("ul").stop().show(500)
+            .parent().siblings().children("ul").stop().hide(500);
+    })
+
+    // 动画开启之前，先停止
+    // 计时器开启之前，先清除
+
+    // .parent()父元素选择器
+    // .siblings()除了当前的所有同级（兄弟）
+
+</script>
+</html>

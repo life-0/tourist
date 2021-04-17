@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="js/JQuery-3.4.1.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+</head>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).on("click", ".sure", function () {
+            let new_time = $(".newTime").val();
+            let endTime = new Date(new_time);
+            let now_Time = new Date();//获取当前时间
+            if (new_time === "") {
+                alert("请重新输入时间!");
+            }
+            if (((endTime.getTime() - now_Time.getTime()) / 1000) < 0) {
+                alert("时间输入错误! 请重新输入");
+            } else {
+                setInterval(function () {
+                    //创建目标日期
+                    // let endTime = new Date("2020-12-12 00:00:00");
+                    let end_Time = new Date($(".newTime").val());
+                    let nowTime = new Date();//获取当前时间
+                    console.log("end_Time: "+end_Time)
+                    console.log("nowTime: "+nowTime)
+                    let seconds = parseInt((end_Time.getTime() - nowTime.getTime()) / 1000);//两个时间点的时间差(秒)
+                    let d = parseInt(seconds / 3600 / 24);//得到天数
+                    let h = parseInt(seconds / 3600 % 24);//小时
+                    let m = parseInt(seconds / 60 % 60);//分钟
+                    let s = parseInt(seconds % 60);//秒
+                    document.getElementById("display").innerHTML = "倒计时: " + d + "天" + h + "小时" + m + "分钟" + s + "秒";
+                }, 1000);
+            }
+        });
+    });
+
+</script>
+<style>
+    p {
+        font-size: 24px;
+        color: red;
+        text-align: center;
+        width: 600px;
+        margin: 30% auto;
+        line-height: 50px;
+    }
+
+    .location {
+        text-align: center;
+        background-color: #fff;
+        border-radius: 20px;
+        width: 305px;
+        position: absolute;
+        left: 50%;
+        top: 32%;
+        transform: translate(-50%, -50%);
+    }
+
+    .radius {
+        text-align: center;
+        border-radius: 20px;
+    }
+</style>
+<body>
+<div class="location">
+    Set Date and time:
+    <input class="newTime radius" type="datetime-local" step="01"/>
+    <br><br>
+    <img class="sure" src="img/btn_hover.jpg">
+</div>
+    <p id="display"></p>
+</body>
+</html>

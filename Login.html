@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>用户登录页面</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="js/JQuery-3.4.1.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            function getCookie(name) {//取cookies函数
+                var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+                if (arr != null)
+                    return unescape(arr[2]);
+                return null;
+            }
+
+            function login() {
+                let account = $('.Account').val();
+                let pwd = $('.pwd').val();
+                let arr = getCookie(account);
+                arr = arr.split(",");
+                if (arr[1] === pwd) {
+                    window.open("/Hbuilder-Project/BaiDu/Home.html", '_self')
+                } else {
+                    alert("账号或密码错误!")
+                }
+            }
+
+            $('.Sign').bind('click', function () {
+                login();
+            });
+            document.onkeydown = function (event) {
+                let e = event || window.event || arguments.callee.caller.arguments[0];
+                if (e && e.keyCode == 13) {
+                    login();
+                }
+            };
+        });
+    </script>
+    <style>
+        /*设置水平垂直居中*/
+        .center-size {
+            position: relative;
+            margin-top: 100px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="col-md-12 center-size" align="center">
+    <h1>Login</h1>
+</div>
+<div class="col-md-12 center-size">
+    <form class="form-horizontal commit">
+        <div align="center">
+            <div class="form-group ">
+                <label for="inputEmail3" class="col-sm-5 control-label">账号</label>
+                <div class="col-sm-2">
+                    <input type="text" name="ID" class="form-control Account "
+                           style="width:300px;"
+                           id="inputEmail3" placeholder="ID">
+                    <span style="font-size: 12px; color: red;" id="IDSpan" disabled></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword3" class="col-sm-5 control-label">密码</label>
+                <div class="col-sm-2">
+                    <input type="password" name="pwd" class="form-control pwd"
+                           style="width:300px;"
+                           id="inputPassword3" placeholder="Password">
+                    <span style="font-size: 12px; color: red;" id="pwdSpan" disabled></span>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div align="center">
+        <div class="col-sm-offset-2 col-sm-8">
+            <button class="btn btn-default Sign">Sign in</button>
+            <button class="btn btn-default " onclick="reset()">Reset</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

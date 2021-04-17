@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>百度一下,你就知道</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="js/JQuery-3.4.1.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+
+    <style>
+        .location {
+            float: right;
+            border-radius: 1px;
+        }
+
+        .s-top-left {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 100;
+            height: 60px;
+            padding-left: 24px;
+        }
+
+        .s-isindex-wrap {
+            position: relative;
+        }
+
+        .mnav {
+            margin-right: 31px;
+            margin-top: 19px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .c-font-normal {
+            font: 13px/23px Arial, sans-serif;
+        }
+
+        .c-color-t {
+            color: #222;
+        }
+
+        .btn-background {
+            background-color: #4e71f2;
+            color: #fcfaff;
+        }
+
+        .btn-color-text {
+            text-align: center;
+            height: 24px;
+            width: 48px;
+            line-height: 24px;
+        }
+
+        .img-size {
+            width: 316px;
+            height: 188px;
+            position: center;
+            text-align: center;
+        }
+
+        .kw {
+            width: 654px;
+            height: 44px;
+            padding: 12px 16px;
+            font-size: 16px;
+            margin: 0;
+            vertical-align: top;
+            outline: 0;
+            box-shadow: none;
+            border-radius: 10px 0 0 10px;
+            border: 2px solid #c4c7ce;
+            background: #fff;
+            color: #222;
+            overflow: hidden;
+        }
+
+        .border-size {
+            width: 548px !important;
+            padding-right: 48px !important;
+        }
+
+        .s_btn {
+            cursor: pointer;
+            width: 108px;
+            height: 44px;
+            line-height: 45px;
+            line-height: 44px \9;
+            padding: 0;
+            background: 0 0;
+            background-color: #4e6ef2;
+            border-radius: 0 10px 10px 0;
+            font-size: 17px;
+            color: #fff;
+            box-shadow: none;
+            font-weight: 400;
+            border: none;
+            outline: 0;
+        }
+
+        .box {
+            clear: both;
+            width: 654px;
+            height: 100px;
+            padding: 15px;
+            float: left;
+        }
+
+        .box li {
+            list-style: none;
+            text-align: center;
+            width: 178px;
+            height: 30px;
+            line-height: 30px;
+            display: inline;
+            margin-right: 125px;
+        }
+    </style>
+</head>
+<body  >
+<!--百度顶部导航栏  开始-->
+<div class=" row">
+    <div class="col-md-4 s-top-left s-isindex-wrap">
+        <a class="mnav c-font-normal c-color-t">新闻</a>
+        <a class="mnav c-font-normal c-color-t">地图</a>
+        <a class="mnav c-font-normal c-color-t">视频</a>
+        <a class="mnav c-font-normal c-color-t">贴吧</a>
+        <a class="mnav c-font-normal c-color-t">学术</a>
+        <a class="mnav c-font-normal c-color-t">学术</a>
+        <a class="mnav c-font-normal c-color-t">学术</a>
+    </div>
+    <div class="col-md-8 s-isindex-wrap">
+        <a class="mnav c-font-normal location btn-background  btn-color-text">登录</a>
+        <a class="mnav c-font-normal location btn-color-text">设置</a>
+    </div>
+</div>
+<!--百度顶部导航栏   结束-->
+
+<!--百度中间部分 包含logo，搜索栏  开始-->
+<div class="row">
+    <div class="col-md-4"></div>
+    <!--logo  开始-->
+    <div class="col-md-6">
+        <img class="img-size" src="img/百度logo.png">
+    </div>
+    <!--logo  结束-->
+
+</div>
+<div class="row">
+    <div class="col-md-2"></div>
+    <!--搜索栏包含搜索文本框,搜索按钮及相机  开始-->
+    <div class="input-group col-md-8 ">
+        <div class="form-group">
+            <form action="http://www.baidu.com/s" method="GET" target="_blank">
+
+                <input type="text" name="wd" class="form-control kw border-size"/>
+<!--                <input type="button" class="s_btn" value="百度一下"/>-->
+                <input type="submit" class="s_btn" value="搜索">
+            </form>
+        </div>
+    </div>
+    <!--搜索栏包含搜索文本框,搜索按钮及相机  结束-->
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <a class=" c-font-normal c-color-t">百度热榜</a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 ">
+        <ul class="box">
+            <li>专家回应大陆军机巡台常态化</li>
+            <li>专家回应大陆军机巡台常态化</li>
+            <li>专家回应大陆军机巡台常态化</li>
+            <li>专家回应大陆军机巡台常态化</li>
+        </ul>
+    </div>
+</div>
+<!--百度中间部分  结束-->
+
+<!--百度底部部分 包含二维码及链接  开始-->
+<div class="bottom">
+    <!--链接部分  开始-->
+    <div class="lj_bd">
+        <p>
+            <a href="javascript:void (0)">把百度设为主页</a>
+            <a href="javascript:void (0)">关于百度</a>
+            <a href="javascript:void (0)">About Baidu</a>
+            <a href="javascript:void (0)">百度推广</a>
+        </p>
+        <p class="bottom_bottom">
+            <a>&copy;2020 Baidu</a>
+            <a href="javascript:void (0)">使用百度前必读 意见反馈</a>
+            <a>京ICP证030173号</a>
+            <span class="icon"></span>
+            <a href="javascript:void (0)">京公网安备11000002000001号</a>
+            <span class="icon icon_1"></span>
+        </p>
+    </div>
+</div>
+<!--链接部分  结束-->
+<!--百度底部部分  结束-->
+</body>
+</html>
+
